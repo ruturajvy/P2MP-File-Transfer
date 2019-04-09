@@ -1,4 +1,4 @@
-#Point to Multi-point File Transfer
+# Point to Multi-point File Transfer
 
 The solution contains two python scripts, one that runs at the client and the other at all the servers. This simulates the file transfer from a single source that is the client to multiple servers.
 
@@ -6,7 +6,7 @@ No. of Files: 2
 
 OS: Windows
 
-###Instructions:
+### Instructions:
 
 1. Paste the p2mpserver.py or p2mpclient.py in a directory of choice.
 
@@ -21,7 +21,7 @@ python p2mpserver.py <server_ip(s)> <server_port> <file_name> <MSS_value>
 
 NOTE: Start the server(s) before starting the client to accurately measure delays.
 
-###Client Algorithm:
+### Client Algorithm:
 
 The client uses an iterative method to read MSS bytes of data from the file and sends it to all the
 servers back to back after the specified encapsulation of the sequence number, checksum and data
@@ -43,7 +43,7 @@ received. The value is decremented by the time difference between the time just 
 bytes and the time of the last acknowledgement. In this way the cumulative timeout for all server
 remains equal to the initial timeout value set.
 
-###Server Algorithm:
+### Server Algorithm:
 
 The server opens a file in write binary mode and runs a loop to receive the data packet using the
 recvfrom method. 
